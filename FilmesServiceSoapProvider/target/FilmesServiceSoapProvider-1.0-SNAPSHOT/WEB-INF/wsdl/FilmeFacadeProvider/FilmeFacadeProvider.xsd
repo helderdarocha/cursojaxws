@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soap.filmes.argonavis.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://soap.filmes.argonavis.com/" name="FilmeFacadeService">
+    <types>
+        <xsd:schema>
+            <xsd:import namespace="http://soap.filmes.argonavis.com/" schemaLocation="http://localhost:8080/FilmesServiceSoap/FilmeFacadeService?xsd=1"/>
+        </xsd:schema>
+    </types>
+    <message name="getFilme">
+        <part name="parameters" element="tns:getFilme"/>
+    </message>
+    <message name="getFilmeResponse">
+        <part name="parameters" element="tns:getFilmeResponse"/>
+    </message>
+    <message name="getTituloFilme">
+        <part name="parameters" element="tns:getTituloFilme"/>
+    </message>
+    <message name="getTituloFilmeResponse">
+        <part name="parameters" element="tns:getTituloFilmeResponse"/>
+    </message>
+    <message name="getFilmes">
+        <part name="parameters" element="tns:getFilmes"/>
+    </message>
+    <message name="getFilmesResponse">
+        <part name="parameters" element="tns:getFilmesResponse"/>
+    </message>
+    <message name="getFilmeObject">
+        <part name="parameters" element="tns:getFilmeObject"/>
+    </message>
+    <message name="getFilmeObjectResponse">
+        <part name="parameters" element="tns:getFilmeObjectResponse"/>
+    </message>
+    <portType name="FilmeFacade">
+        <operation name="getFilme">
+            <input wsam:Action="http://soap.filmes.argonavis.com/FilmeFacade/getFilmeRequest" message="tns:getFilme"/>
+            <output wsam:Action="http://soap.filmes.argonavis.com/FilmeFacade/getFilmeResponse" message="tns:getFilmeResponse"/>
+        </operation>
+        <operation name="getTituloFilme">
+            <input wsam:Action="http://soap.filmes.argonavis.com/FilmeFacade/getTituloFilmeRequest" message="tns:getTituloFilme"/>
+            <output wsam:Action="http://soap.filmes.argonavis.com/FilmeFacade/getTituloFilmeResponse" message="tns:getTituloFilmeResponse"/>
+        </operation>
+        <operation name="getFilmes">
+            <input wsam:Action="http://soap.filmes.argonavis.com/FilmeFacade/getFilmesRequest" message="tns:getFilmes"/>
+            <output wsam:Action="http://soap.filmes.argonavis.com/FilmeFacade/getFilmesResponse" message="tns:getFilmesResponse"/>
+        </operation>
+        <operation name="getFilmeObject">
+            <input wsam:Action="http://soap.filmes.argonavis.com/FilmeFacade/getFilmeObjectRequest" message="tns:getFilmeObject"/>
+            <output wsam:Action="http://soap.filmes.argonavis.com/FilmeFacade/getFilmeObjectResponse" message="tns:getFilmeObjectResponse"/>
+        </operation>
+    </portType>
+    <binding name="FilmeFacadePortBinding" type="tns:FilmeFacade">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <operation name="getFilme">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getTituloFilme">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getFilmes">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getFilmeObject">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="FilmeFacadeService">
+        <port name="FilmeFacadePort" binding="tns:FilmeFacadePortBinding">
+            <soap:address location="http://localhost:8080/FilmesServiceSoapProvider/FilmeFacadeProvider"/>
+        </port>
+    </service>
+</definitions>

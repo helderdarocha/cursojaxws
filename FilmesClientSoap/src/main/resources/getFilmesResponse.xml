@@ -1,0 +1,148 @@
+<definitions targetNamespace="http://soap.filmes.argonavis.com/" name="FilmeFacadeService">
+    <types>
+        <xsd:schema version="1.0" targetNamespace="http://soap.filmes.argonavis.com/">
+            <xsd:element name="getFilme" type="tns:getFilme"/>
+            <xsd:element name="getFilmeObject" type="tns:getFilmeObject"/>
+            <xsd:element name="getFilmeObjectResponse" type="tns:getFilmeObjectResponse"/>
+            <xsd:element name="getFilmeResponse" type="tns:getFilmeResponse"/>
+            <xsd:element name="getFilmes" type="tns:getFilmes"/>
+            <xsd:element name="getFilmesResponse" type="tns:getFilmesResponse"/>
+            <xsd:element name="getTituloFilme" type="tns:getTituloFilme"/>
+            <xsd:element name="getTituloFilmeResponse" type="tns:getTituloFilmeResponse"/>
+            <xsd:complexType name="getFilmes">
+                <xsd:sequence/>
+            </xsd:complexType>
+            <xsd:complexType name="getFilmesResponse">
+                <xsd:sequence>
+                    <xsd:element name="return" type="tns:filme" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="filme">
+                <xsd:sequence>
+                    <xsd:element name="ano" type="xsd:long" minOccurs="0"/>
+                    <xsd:element name="diretor" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="duracao" type="xsd:long"/>
+                    <xsd:element name="id" type="xsd:long" minOccurs="0"/>
+                    <xsd:element name="imdb" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="titulo" type="xsd:string" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="getFilme">
+                <xsd:sequence>
+                    <xsd:element name="arg0" type="xsd:string" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="getFilmeResponse">
+                <xsd:sequence>
+                    <xsd:element name="return" type="tns:filme" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="getFilmeObject">
+                <xsd:sequence>
+                    <xsd:element name="arg0" type="xsd:string" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="getFilmeObjectResponse">
+                <xsd:sequence>
+                    <xsd:element name="return" type="tns:filme" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="getTituloFilme">
+                <xsd:sequence>
+                    <xsd:element name="arg0" type="xsd:string" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="getTituloFilmeResponse">
+                <xsd:sequence>
+                    <xsd:element name="return" type="xsd:string" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+    <message name="getTituloFilme">
+        <part name="parameters" element="tns:getTituloFilme"/>
+    </message>
+    <message name="getTituloFilmeResponse">
+        <part name="parameters" element="tns:getTituloFilmeResponse"/>
+    </message>
+    <message name="getFilmes">
+        <part name="parameters" element="tns:getFilmes"/>
+    </message>
+    <message name="getFilmesResponse">
+        <part name="parameters" element="tns:getFilmesResponse"/>
+    </message>
+    <message name="getFilmeObject">
+        <part name="parameters" element="tns:getFilmeObject"/>
+    </message>
+    <message name="getFilmeObjectResponse">
+        <part name="parameters" element="tns:getFilmeObjectResponse"/>
+    </message>
+    <message name="getFilme">
+        <part name="parameters" element="tns:getFilme"/>
+    </message>
+    <message name="getFilmeResponse">
+        <part name="parameters" element="tns:getFilmeResponse"/>
+    </message>
+    <portType name="FilmeFacade">
+        <operation name="getTituloFilme">
+            <input wsam:Action="http://soap.filmes.argonavis.com/FilmeFacade/getTituloFilmeRequest" message="tns:getTituloFilme"/>
+            <output wsam:Action="http://soap.filmes.argonavis.com/FilmeFacade/getTituloFilmeResponse" message="tns:getTituloFilmeResponse"/>
+        </operation>
+        <operation name="getFilmes">
+            <input wsam:Action="http://soap.filmes.argonavis.com/FilmeFacade/getFilmesRequest" message="tns:getFilmes"/>
+            <output wsam:Action="http://soap.filmes.argonavis.com/FilmeFacade/getFilmesResponse" message="tns:getFilmesResponse"/>
+        </operation>
+        <operation name="getFilmeObject">
+            <input wsam:Action="http://soap.filmes.argonavis.com/FilmeFacade/getFilmeObjectRequest" message="tns:getFilmeObject"/>
+            <output wsam:Action="http://soap.filmes.argonavis.com/FilmeFacade/getFilmeObjectResponse" message="tns:getFilmeObjectResponse"/>
+        </operation>
+        <operation name="getFilme">
+            <input wsam:Action="http://soap.filmes.argonavis.com/FilmeFacade/getFilmeRequest" message="tns:getFilme"/>
+            <output wsam:Action="http://soap.filmes.argonavis.com/FilmeFacade/getFilmeResponse" message="tns:getFilmeResponse"/>
+        </operation>
+    </portType>
+    <binding name="FilmeFacadePortBinding" type="tns:FilmeFacade">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <operation name="getTituloFilme">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getFilmes">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getFilmeObject">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getFilme">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="FilmeFacadeService">
+        <port name="FilmeFacadePort" binding="tns:FilmeFacadePortBinding">
+            <soap:address location="http://localhost:8080/FilmesServiceSoap/FilmeFacadeService"/>
+        </port>
+    </service>
+</definitions>

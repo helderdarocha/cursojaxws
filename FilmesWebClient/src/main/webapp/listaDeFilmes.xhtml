@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Lista de Filmes</title>
+    </h:head>
+    <h:body>
+        <h1>Lista de Filmes</h1>
+        <h:dataTable value="#{filmesBean.filmes}" var="filme" border="1">
+            <h:column>
+                <f:facet name="header">IMDB</f:facet>
+                <a href="http://www.imdb.com/title/#{filme.imdb}">#{filme.imdb}</a>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Título</f:facet>
+                    #{filme.titulo}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Diretor</f:facet>
+                    #{filme.diretor}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Ano</f:facet>
+                    #{filme.ano}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Duração</f:facet>
+                    #{filme.duracao} min
+            </h:column>
+        </h:dataTable>
+    </h:body>
+</html>
+

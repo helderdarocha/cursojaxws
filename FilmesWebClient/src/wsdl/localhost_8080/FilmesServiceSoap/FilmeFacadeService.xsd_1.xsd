@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://soap.filmes.argonavis.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://soap.filmes.argonavis.com/">
+
+<xs:element name="getFilme" type="tns:getFilme"/>
+
+<xs:element name="getFilmeObject" type="tns:getFilmeObject"/>
+
+<xs:element name="getFilmeObjectResponse" type="tns:getFilmeObjectResponse"/>
+
+<xs:element name="getFilmeResponse" type="tns:getFilmeResponse"/>
+
+<xs:element name="getFilmes" type="tns:getFilmes"/>
+
+<xs:element name="getFilmesResponse" type="tns:getFilmesResponse"/>
+
+<xs:element name="getTituloFilme" type="tns:getTituloFilme"/>
+
+<xs:element name="getTituloFilmeResponse" type="tns:getTituloFilmeResponse"/>
+
+<xs:complexType name="getFilme">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getFilmeResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:filme" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="filme">
+<xs:sequence>
+<xs:element name="ano" type="xs:long" minOccurs="0"/>
+<xs:element name="diretor" type="xs:string" minOccurs="0"/>
+<xs:element name="duracao" type="xs:long"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="imdb" type="xs:string" minOccurs="0"/>
+<xs:element name="titulo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getFilmes">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getFilmesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:filme" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getFilmeObject">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getFilmeObjectResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:filme" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTituloFilme">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTituloFilmeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

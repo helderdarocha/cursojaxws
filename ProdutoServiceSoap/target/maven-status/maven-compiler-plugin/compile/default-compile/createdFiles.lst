@@ -1,0 +1,4 @@
+br/com/argonavis/produto/entity/Produto.class
+br/com/argonavis/produto/entity/Produto_.class
+br/com/argonavis/produto/service/soap/ProdutoFacadeImpl.class
+br/com/argonavis/produto/service/soap/ProdutoFacade.class
